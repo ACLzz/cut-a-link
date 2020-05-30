@@ -1,0 +1,11 @@
+<p>
+    <div>
+        <form method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Cut">
+        </form>
+        <div>Extra type will provide an opportunity to see who, when, from which device and from what (approximate)
+            location clicked on your link</div>
+        <div>URL: {{ request.build_absolute_uri }}{{ form.short }}</div>
+    </div>
+</p>

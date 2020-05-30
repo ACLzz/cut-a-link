@@ -77,10 +77,11 @@ WSGI_APPLICATION = 'cut_a_link.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cutter',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1'
+        'NAME': os.environ.get('DATABASE'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASS'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT')
     }
 }
 

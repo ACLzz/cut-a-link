@@ -25,7 +25,7 @@ SECRET_KEY = 'q-1zx-2e$+yw4=7lk@ag$ks#e9gx&wl=l$a8%93646e0kfm%o!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cut-a-link.herokuapp.com']
 
 
 # Application definition

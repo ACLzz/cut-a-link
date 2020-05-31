@@ -13,8 +13,6 @@ from random import choice
 
 from .models import Link, Stats
 
-from folium import Map
-
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 shorty_length = 5
 

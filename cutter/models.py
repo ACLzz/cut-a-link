@@ -14,8 +14,8 @@ class Stats(models.Model):
     ip = models.CharField(max_length=15)
     short = models.ForeignKey(Link, on_delete=models.CASCADE, to_field='short')
     date = models.DateTimeField('Get request time')
-    long = models.IntegerField()
-    lat = models.IntegerField()
+    long = models.DecimalField(max_digits=30, decimal_places=15)
+    lat = models.DecimalField(max_digits=30, decimal_places=15)
     agent = models.CharField(max_length=128)
 
     def __str__(self):

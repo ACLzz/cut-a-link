@@ -25,7 +25,7 @@ SECRET_KEY = 'q-1zx-2e$+yw4=7lk@ag$ks#e9gx&wl=l$a8%93646e0kfm%o!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cut-a-link.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['cut-a-link.herokuapp.com', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

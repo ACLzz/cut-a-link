@@ -13,6 +13,8 @@ from random import choice
 
 from .models import Link, Stats
 
+from folium import Map
+
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 shorty_length = 5
 
@@ -40,6 +42,11 @@ class IndexView(FormView):
 
         orig = data['origin']
         short = generate_shorty(shorty_length)
+
+        # If that url already exist in database
+        exist = Link.objects.filter(orig=orig, extra=extra)
+        if exist:
+            return exist[0].short
 
         link = Link(orig=orig, short=short, extra=extra)
         link.save()

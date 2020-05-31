@@ -7,7 +7,7 @@ class Link(models.Model):
     extra = models.BooleanField(default=False)
 
     def __str__(self):
-        return {self.short}
+        return self.short
 
 
 class Stats(models.Model):
@@ -19,4 +19,4 @@ class Stats(models.Model):
     agent = models.CharField(max_length=128)
 
     def __str__(self):
-        return str(self.ip)
+        return self.ip

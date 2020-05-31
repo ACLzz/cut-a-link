@@ -18,9 +18,9 @@
         <div id='additional'>*Extra type will provide an opportunity to see <strong>who</strong>, <strong>when</strong>, from which <strong>browser</strong> and from what (approximate)
             <strong>location</strong> clicked on your link.<br><br>To get this information from extra shortcut, you need to type '/extra' after short link.<br><br>
             Example: my extra shortcut https://cut-a-link.herokuapp.com/RudqC for get extra info i'm going on
-            https://cut-a-link.herokuapp.com/RudqC<b>/extra</b></div><br>
+            https://cut-a-link.herokuapp.com/RudqC<b>/extra</b></div>
         {% if form.short %}
-            <div id='short'>Your url: {{ request.build_absolute_uri }}{{ form.short }}</div>
+            <div id='short'>Your url:<br>{{ request.build_absolute_uri }}{{ form.short }}</div>
         {% endif %}
     </div>
 {% endblock %}

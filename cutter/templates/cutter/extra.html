@@ -1,27 +1,28 @@
+{% extends "cutter/base.html" %}
 {% load static %}
-{% extends “base.html” %}
 
 {% block title %}cut-a-link{% endblock %}
 
 {% block head %}
-    {{ super() }}
-    <link rel="stylesheet" type="text/css" href="{% static cutter/extra.css %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cutter/extra.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Satisfy&display=swap" rel="stylesheet"> 
 {% endblock %}
 
 {% block body %}
-    <div class="extra_container">
         {% if redirections %}
-            {% for user in redirections %}
-                <p>
-                    <div>Ip: {{ user.ip }}</div>
-                    <div>Browser: {{ user.agent }}</div>
-                    <div>At: {{ user.date }}</div>
-                    <div>Longtitude: {{ user.long }}</div>
-                    <div>Latitude: {{ user.lat }}</div>
-                </p>
-            {% endfor %}
+            <div id="header">Extra data</div>
+            <div class="extra_container">
+                {% for user in redirections %}
+                    <div id="ip">Ip: {{ user.ip }}</div>
+                    <div class="ip_container">
+                        <div>Browser: {{ user.agent }}</div>
+                        <div>At: {{ user.date }}</div>
+                        <div>Longtitude: {{ user.long }}</div>
+                        <div>Latitude: {{ user.lat }}</div>
+                    </div>
+                {% endfor %}
+            </div>
         {% else %}
-            <p>Anyone has visted your link.</p>
+            <div id='empty_list'>Anyone has visted your link :(</div>
         {% endif %}
-    </div>
 {% endblock %}

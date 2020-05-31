@@ -1,0 +1,39 @@
+@import 'style.css';
+
+
+#empty_list {
+	text-align: center;
+	font-size: 65pt;
+	padding: 24% 0;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.extra_container {
+	margin: 0 auto;
+    width: 40%;
+    background: #3d3c3c;
+    border-radius: 20px;
+    border: solid white 3px;
+    padding: 15px;
+}
+
+.ip_container {
+	padding-bottom: 4px;
+	padding-left: 4px;
+	padding-top: 2px;
+	background-color: #1e1e1e;
+	color: white;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	font-family: 'Open Sans', sans-serif;
+	color: #e2e2e2;
+}
+
+#ip {
+	font-family: 'Open Sans', sans-serif;
+	margin-right: 5px;
+    background-color: #e5e5e5;
+    padding: 2px;
+    color: black;
+}

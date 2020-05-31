@@ -49,7 +49,6 @@ class IndexView(FormView):
 def extra(request, short):
     queryset = []
     for stat in Stats.objects.filter(short=short).order_by('-date'):
-        print(111)
         stat.date = stat.date.strftime("%m/%d/%Y, %H:%M:%S")
         queryset.append(stat)
 

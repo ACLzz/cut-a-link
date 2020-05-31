@@ -1,11 +1,26 @@
-<p>
-    <div>
+{% extends "cutter/base.html" %}
+{% load static %}
+
+{% block title %}cut-a-link{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cutter/index.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Satisfy&display=swap" rel="stylesheet"> 
+{% endblock %}
+
+{% block body %}
+    <div class="index_container">
+        <div id='header'>Cut a link</div>
         <form method="post">{% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Cut">
-        </form>
-        <div>Extra type will provide an opportunity to see who, when, from which device and from what (approximate)
-            location clicked on your link</div>
-        <div>URL: {{ request.build_absolute_uri }}{{ form.short }}</div>
+            <input type="submit" value="Cut" class="d-block mr-0 ml-auto">
+        </form><br>
+        <div id='additional'>*Extra type will provide an opportunity to see <strong>who</strong>, <strong>when</strong>, from which <strong>browser</strong> and from what (approximate)
+            <strong>location</strong> clicked on your link.<br><br>To get this information from extra shortcut, you need to type '/extra' after short link.<br><br>
+            Example: my extra shortcut https://cut-a-link.herokuapp.com/RudqC for get extra info i'm going on
+            https://cut-a-link.herokuapp.com/RudqC<b>/extra</b></div><br>
+        {% if form.short %}
+            <div id='short'>Your url: {{ request.build_absolute_uri }}{{ form.short }}</div>
+        {% endif %}
     </div>
-</p>
+{% endblock %}

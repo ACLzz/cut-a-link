@@ -1,15 +1,27 @@
-<p>
-    {% if redirections %}
-        {% for user in redirections %}
-            <p>
-                <div>Ip: {{ user.ip }}</div>
-                <div>Browser: {{ user.agent }}</div>
-                <div>At: {{ user.date }}</div>
-                <div>Longtitude: {{ user.long }}</div>
-                <div>Latitude: {{ user.lat }}</div>
-            </p>
-        {% endfor %}
-    {% else %}
-        <p>Anyone has visted your link.</p>
-    {% endif %}
-</p>
+{% load static %}
+{% extends “base.html” %}
+
+{% block title %}cut-a-link{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{% static cutter/extra.css %}">
+{% endblock %}
+
+{% block body %}
+    <div class="extra_container">
+        {% if redirections %}
+            {% for user in redirections %}
+                <p>
+                    <div>Ip: {{ user.ip }}</div>
+                    <div>Browser: {{ user.agent }}</div>
+                    <div>At: {{ user.date }}</div>
+                    <div>Longtitude: {{ user.long }}</div>
+                    <div>Latitude: {{ user.lat }}</div>
+                </p>
+            {% endfor %}
+        {% else %}
+            <p>Anyone has visted your link.</p>
+        {% endif %}
+    </div>
+{% endblock %}

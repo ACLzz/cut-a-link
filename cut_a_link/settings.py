@@ -25,7 +25,7 @@ SECRET_KEY = 'q-1zx-2e$+yw4=7lk@ag$ks#e9gx&wl=l$a8%93646e0kfm%o!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cut-a-link.herokuapp.com']
+ALLOWED_HOSTS = ['cut-a-link.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -78,7 +78,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('DATABASE'),
-        'USER': os.environ.get('DB_USER'),
+        'USER': 'postgres', #os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASS'),
         'HOST': os.environ.get('DB_HOST'),
         'PORT': os.environ.get('DB_PORT')

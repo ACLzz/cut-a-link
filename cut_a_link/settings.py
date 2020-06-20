@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'q-1zx-2e$+yw4=7lk@ag$ks#e9gx&wl=l$a8%93646e0kfm%o!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['cut-a-link.herokuapp.com', '127.0.0.1', '0.0.0.0']
+ALLOWED_HOSTS = ['cut-a-link.herokuapp.com', '127.0.0.1', '0.0.0.0', 'claes.lan']
 
 
 # Application definition
@@ -124,3 +124,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'cutter', 'static')
